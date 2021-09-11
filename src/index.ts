@@ -1,4 +1,5 @@
 import { Client } from 'discord.js';
+require('dotenv').config();
 
 const client = new Client({ intents: 'GUILDS' });
 
@@ -10,5 +11,4 @@ client.on('message', (message) => {
     message.channel.send('おっはー');
   }
 });
-
-client.login();
+client.login(process.env.DISCORD_TOKEN);

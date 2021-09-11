@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
+require('dotenv').config();
 const client = new discord_js_1.Client({ intents: 'GUILDS' });
 client.on('message', (message) => {
     if (message.author.bot) {
@@ -10,4 +11,4 @@ client.on('message', (message) => {
         message.channel.send('おっはー');
     }
 });
-client.login();
+client.login(process.env.DISCORD_TOKEN);
